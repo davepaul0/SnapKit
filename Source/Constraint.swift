@@ -201,7 +201,7 @@ public class Constraint {
         #endif
         
         // set install info
-        self.installInfo = ConstraintInstallInfo(view: installOnView, layoutConstraints: HashTable.weakObjects())
+        self.installInfo = ConstraintInstallInfo(view: installOnView, layoutConstraints: NSHashTable.weakObjects())
         
         // store which layout constraints are installed for this constraint
         for layoutConstraint in newLayoutConstraints {
@@ -278,9 +278,9 @@ public class Constraint {
 private final class ConstraintInstallInfo {
     
     private weak var view: ConstraintView? = nil
-    private let layoutConstraints: HashTable<AnyObject>
+    private let layoutConstraints: NSHashTable<AnyObject>
     
-    private init(view: ConstraintView?, layoutConstraints: HashTable<AnyObject>) {
+    private init(view: ConstraintView?, layoutConstraints: NSHashTable<AnyObject>) {
         self.view = view
         self.layoutConstraints = layoutConstraints
     }
